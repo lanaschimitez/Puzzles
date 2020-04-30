@@ -7,6 +7,7 @@ public class Puzzle1 : MonoBehaviour
 {
     public float speed = 5.0f;
     public GameObject gameObjectTodrag;
+    public GameObject colisor;
     public Vector3 GOcenter; //Centro do objeto
     public Vector3 touchPosition; //Touch ou posição do Click
     public Vector3 offset;//vector entre touchpoint/mouseclick para o Centro do Objeto
@@ -18,6 +19,7 @@ public class Puzzle1 : MonoBehaviour
     {
         if (other.CompareTag("Barreira"))
         {
+            colisor = other.gameObject;
             transform.position = new Vector3(-5.704f, -2.833f, 0f);
         }
 
@@ -55,7 +57,14 @@ public class Puzzle1 : MonoBehaviour
                     {
                         touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                         newGOCenter = touchPosition - offset;
-                        gameObject.transform.position = new Vector3(newGOCenter.x, newGOCenter.y, GOcenter.z);
+                        if (colisor)
+                        {
+                            gameObject.transform.position = new Vector3(0, 0, 0);
+                        }
+                        else
+                        {
+                            gameObject.transform.position = new Vector3(newGOCenter.x, newGOCenter.y, GOcenter.z);
+                        }
                     }
                     break;
 
