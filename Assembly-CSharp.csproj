@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B1167817-77A0-7D25-76F8-70CFF91BC0DC}</ProjectGuid>
+    <ProjectGuid>{3D8C8008-5044-3D7F-ACBF-CB8B37A85029}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,31 +70,31 @@
     <Compile Include="Assets\Scripts\Puzzle4\MovimentacaoPeca.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\OrdemPedaco.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/A Carta Roubada - Correto/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

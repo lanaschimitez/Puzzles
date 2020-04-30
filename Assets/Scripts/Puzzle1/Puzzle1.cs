@@ -6,34 +6,64 @@ using UnityEngine.SceneManagement;
 public class Puzzle1 : MonoBehaviour
 {
     public float speed = 5.0f;
-    void Start()
-    {
+    public GameObject gameObjectTodrag;
+    public Vector3 GOcenter; //Centro do objeto
+    public Vector3 touchPosition; //Touch ou posição do Click
+    public Vector3 offset;//vector entre touchpoint/mouseclick para o Centro do Objeto
+    public Vector3 newGOCenter; //novo Centro do objeto
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Movimento();
-    }
+    RaycastHit hit; //Armazena informação que pegou o objeto
+    public bool draggingMode = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Barreira")
+        if (other.CompareTag("Barreira"))
+        {
             transform.position = new Vector3(-5.704f, -2.833f, 0f);
-        if (other.tag == "Final")
+        }
+
+        if (other.CompareTag("Final"))
         {
             Debug.Log("Ganhou");
-            PlayerPrefs.SetInt("quadro_on", 1);
-            SceneManager.LoadScene("Sala Principal");
         }
     }
 
-    public void Movimento()
+    public void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime; //o jogador ira mover cada vez que prescioonar 
-        transform.Translate(horizontal, 0, 0);
-        float vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime; //o jogador ira mover cada vez que prescioonar 
-        transform.Translate(0, vertical, 0);
+       foreach (Touch touch in Input.touches)
+        {
+            switch (touch.phase)
+            {
+                //Quando há um toque
+                case TouchPhase.Began:
+                    //converte a posição do toque para um Ray
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+
+                    //Se o ray acertar (hit) o Collider (não 2DCollider)
+                    // if (Physics.Raycast(ray, out hit))
+                    if (Physics.SphereCast(ray, 0.3f, out hit))
+                    {
+                        gameObjectTodrag = hit.collider.gameObject; //mudar para varios objetos
+                        GOcenter = hit.collider.gameObject.transform.position;
+                        touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        offset = touchPosition - GOcenter;
+                        draggingMode = true;
+                    }
+                    break;
+
+                case TouchPhase.Moved:
+                    if (draggingMode)
+                    {
+                        touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        newGOCenter = touchPosition - offset;
+                        gameObject.transform.position = new Vector3(newGOCenter.x, newGOCenter.y, GOcenter.z);
+                    }
+                    break;
+
+                case TouchPhase.Ended:
+                    draggingMode = false;
+                    break;
+            }
+        }
     }
 
     public void sairPuzzle()
