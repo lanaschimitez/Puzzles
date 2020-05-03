@@ -20,7 +20,6 @@ public class Puzzle1 : MonoBehaviour
         if (other.CompareTag("Barreira"))
         {
             colisor = other.gameObject;
-            transform.position = new Vector3(-5.704f, -2.833f, 0f);
         }
 
         if (other.CompareTag("Final"))
@@ -59,7 +58,7 @@ public class Puzzle1 : MonoBehaviour
                         newGOCenter = touchPosition - offset;
                         if (colisor)
                         {
-                            gameObject.transform.position = new Vector3(0, 0, 0);
+                            gameObject.transform.position = new Vector3(-5.704f, -2.833f, 0f);
                         }
                         else
                         {
@@ -70,12 +69,13 @@ public class Puzzle1 : MonoBehaviour
 
                 case TouchPhase.Ended:
                     draggingMode = false;
+                    colisor = null;
                     break;
             }
         }
     }
 
-    public void sairPuzzle()
+    public void SairPuzzle()
     {
         SceneManager.LoadScene("Sala Principal");
     }
