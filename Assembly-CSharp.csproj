@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\Puzzle1\Puzzle1Touch.cs" />
     <Compile Include="Assets\Scripts\Puzzle2\CaixaDeEscrita.cs" />
     <Compile Include="Assets\Scripts\Puzzle2\TextoEnigma.cs" />
-    <Compile Include="Assets\Scripts\Puzzle4\LugarPedaco.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\MovimentacaoPeca.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\OrdemPedaco.cs" />
     <Compile Include="Assets\Sprites\Puzzle3\LightsControl.cs" />

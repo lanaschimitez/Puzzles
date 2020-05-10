@@ -6,68 +6,63 @@ using System;
 
 public class MovimentacaoPeca : MonoBehaviour
 {
-
-    //Este codigo e para click/drag gameobject 2D
-    //Cameraprojeção deve estar como Orthographic
-    //Adicionar um Collider (não 2DCollider) no gameObject  
     public GameObject[] gameObjectTodrag = new GameObject[9]; //Objeto que sera movido
-    public int ordem; //ordem do objeto
-    public Vector3 posicaoLugar2;
-    public bool mudarLugar = false;
-
-
-    public Vector3 GOcenter; //Centro do objeto
-    public Vector3 touchPosition; //Touch ou posição do Click
-    public Vector3 offset;//vector entre touchpoint/mouseclick para o Centro do Objeto
-    public Vector3 newGOCenter; //novo Centro do objeto
-
+    public bool[] lugarCorreto = new bool[9];
+    private bool vitoria = false;
+    private int ordem; //ordem do objeto
+    
+    private Vector3 GOcenter; //Centro do objeto
+    private Vector3 touchPosition; //Touch ou posição do Click
+    private Vector3 offset;//vector entre touchpoint/mouseclick para o Centro do Objeto
+    private Vector3 newGOCenter; //novo Centro do objeto
     RaycastHit hit; //Armazena informação que pegou o objeto
-
-    public bool draggingMode = false;
+    private bool draggingMode = false;
 
     void Update()
     {
-        
-        foreach (Touch touch in Input.touches)
+        if (Input.GetMouseButtonDown(0))
         {
-            switch (touch.phase)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
             {
-                //Quando há um toque
-                case TouchPhase.Began:
-                    //converte a posição do toque para um Ray
-                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
-
-                    //Se o ray acertar (hit) o Collider (não 2DCollider)
-                    // if (Physics.Raycast(ray, out hit))
-                    if (Physics.SphereCast(ray, 0.3f, out hit))
-                    {
-                        ordem = hit.collider.gameObject.GetComponent<OrdemPedaco>().orderPedaco;
-                        ordem -= ordem;
-                        gameObjectTodrag[ordem] = hit.collider.gameObject; //mudar para varios objetos
-                        GOcenter = gameObjectTodrag[ordem].transform.position;
-                        touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        offset = touchPosition - GOcenter;
-                        draggingMode = true;
-                    }
-                    break;
-
-                case TouchPhase.Moved:
-                    if (draggingMode)
-                    {
-                        touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        newGOCenter = touchPosition - offset;
-                        gameObjectTodrag[ordem].transform.position = new Vector3(newGOCenter.x, newGOCenter.y, GOcenter.z);
-                    }
-                    break;
-
-                case TouchPhase.Ended:
-                    draggingMode = false;
-                    mudarLugar = true;
-                    gameObjectTodrag[ordem].GetComponent<OrdemPedaco>().mudarLugar = mudarLugar;
-                    mudarLugar = false;
-                    ordem = 0;
-                    break;
+                ordem = hit.collider.gameObject.GetComponent<OrdemPedaco>().orderPedaco;
+                ordem -= ordem;
+                gameObjectTodrag[ordem] = hit.collider.gameObject; //mudar para varios objetos
+                GOcenter = gameObjectTodrag[ordem].transform.position;
+                touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                offset = touchPosition - GOcenter;
+                draggingMode = true;
             }
+        }
+        if (Input.GetMouseButton(0))
+        {
+            if (draggingMode)
+            {
+                touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                newGOCenter = touchPosition - offset;
+                gameObjectTodrag[ordem].transform.position = new Vector3(newGOCenter.x, newGOCenter.y, GOcenter.z);
+            }
+        }
+        //Quando solta o click do mouse
+        if (Input.GetMouseButtonUp(0))
+        {
+            draggingMode = false;
+            ordem = 0;
+        }
+
+        for(int i = 1; i < 9; i++)
+        {
+            if (lugarCorreto[i] != true)
+            {
+                vitoria = false;
+                break;
+            }
+            else
+            {
+                vitoria = true;
+            }
+        }
+        if (vitoria){ Debug.Log("Ganhou"); //inciar animacao da carta
         }
     }
 }
