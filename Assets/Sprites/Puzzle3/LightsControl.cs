@@ -13,17 +13,8 @@ public class LightsControl : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (lightsOn)
-        {
-            luz.enabled = true;
-        }
-        else
-        {
-            luz.enabled = false;
-        }
+        luz.enabled = (lightsOn) ? true :  false; //boolean para ativar a luz
     }
 }
