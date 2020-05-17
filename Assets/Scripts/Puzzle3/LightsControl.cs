@@ -8,18 +8,25 @@ using UnityEngine.UI;
 
 public class LightsControl : MonoBehaviour
 {
-    public bool lightsOn;
-    public Light2D luz;
-    public Button button;
     public int idButton;
+    public GameObject game;
+    public int[] idLightsO = new int[9];
+
+    RaycastHit hit; //Armazena informação que pegou o objeto
     void Start()
     {
 
     }
     void Update()
     {
-        luz.enabled = (lightsOn) ? true :  false; //boolean para ativar a luz
-        button.GetComponent<Image>().color = Color.red;
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                game = hit.collider.gameObject; //mudar para varios objetos
+                game.GetComponent<SpriteRenderer>().color = Color.black;
+            }
+        }
     }
 }
