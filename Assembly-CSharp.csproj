@@ -67,9 +67,9 @@
     <Compile Include="Assets\Scripts\Puzzle1\Puzzle1Touch.cs" />
     <Compile Include="Assets\Scripts\Puzzle2\CaixaDeEscrita.cs" />
     <Compile Include="Assets\Scripts\Puzzle2\TextoEnigma.cs" />
+    <Compile Include="Assets\Scripts\Puzzle3\LightsControl.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\MovimentacaoPeca.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\OrdemPedaco.cs" />
-    <Compile Include="Assets\Sprites\Puzzle3\LightsControl.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
@@ -129,6 +129,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
