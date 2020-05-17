@@ -11,6 +11,7 @@ public class LightsControl : MonoBehaviour
     public bool lightsOn;
     public Light2D luz;
     public Button button;
+    public int idButton;
     void Start()
     {
 
