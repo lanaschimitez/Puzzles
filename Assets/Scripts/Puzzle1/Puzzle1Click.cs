@@ -56,7 +56,7 @@ public class Puzzle1Click : MonoBehaviour
                 newGOCenter = touchPosition - offset;
                 if (colisor)
                 {
-                    gameObject.transform.position = new Vector3(-5.704f, -2.833f, 0f);
+                    gameObject.transform.position = new Vector3(-8.2f, -4f, 0f);
                 }
                 else
                 {

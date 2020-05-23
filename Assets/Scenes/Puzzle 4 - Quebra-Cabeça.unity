@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 7
   posicaoLugar: {x: -1.5, y: -1.5, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &235287276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -442,6 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 1
   posicaoLugar: {x: -1.5, y: 1.5, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!54 &269448723
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -556,6 +560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 5
   posicaoLugar: {x: 0, y: 0, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &349159724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -683,6 +689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 2
   posicaoLugar: {x: 0, y: 1.5, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &411824840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -810,6 +818,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 4
   posicaoLugar: {x: -1.5, y: 0, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &1073374460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -937,6 +947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 9
   posicaoLugar: {x: 1.5, y: -1.5, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &1808021327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1064,6 +1076,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 8
   posicaoLugar: {x: 0, y: -1.5, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &1850299282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1296,6 +1310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 3
   posicaoLugar: {x: 1.5, y: 1.5, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &2007707531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1423,6 +1439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderPedaco: 6
   posicaoLugar: {x: 1.5, y: 0, z: 0}
+  posicaoLugar2: {x: 0, y: 0, z: 0}
+  _distancia: 0
 --- !u!65 &2120002344
 BoxCollider:
   m_ObjectHideFlags: 0

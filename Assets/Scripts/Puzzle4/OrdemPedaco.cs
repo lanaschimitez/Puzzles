@@ -7,19 +7,21 @@ public class OrdemPedaco : MonoBehaviour
     public int orderPedaco;
     public Vector3 posicaoLugar;
     private Vector3 posicaoPedaco;
-    private Vector3 posicaoLugar2;
+    public Vector3 posicaoLugar2;
     private bool lugarCorreto = false;
+    public float _distancia = 0;
 
-    private void Update()
+    private void Start()
     {
         posicaoLugar2 = posicaoLugar;
+    }
+    private void Update()
+    {
         posicaoPedaco = transform.position;
-        posicaoLugar2.x = (posicaoLugar.x < 0) ? (posicaoLugar.x * (-1)) : posicaoLugar.x;
-        posicaoLugar2.y = (posicaoLugar.y < 0) ? (posicaoLugar.y * (-1)) : posicaoLugar.y;
-        posicaoPedaco.x = (transform.position.x < 0) ? (transform.position.x * (-1)) : transform.position.x;
-        posicaoPedaco.y = (transform.position.y < 0) ? (transform.position.y * (-1)) : transform.position.y;
 
-        if ((posicaoPedaco.x - posicaoLugar2.x < 0.2f) && (posicaoPedaco.y - posicaoLugar2.y < 0.2f))
+        _distancia = Vector3.Distance(posicaoPedaco, posicaoLugar);
+
+        if (_distancia < 0.2f)
         {
             transform.position = posicaoLugar;
             lugarCorreto = true;
