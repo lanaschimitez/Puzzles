@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Credits.cs" />
     <Compile Include="Assets\Scripts\Puzzle1\Puzzle1Click.cs" />
     <Compile Include="Assets\Scripts\Puzzle1\Puzzle1Touch.cs" />
     <Compile Include="Assets\Scripts\Puzzle2\CaixaDeEscrita.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\Puzzle3\LightsID.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\MovimentacaoPeca.cs" />
     <Compile Include="Assets\Scripts\Puzzle4\OrdemPedaco.cs" />
+    <None Include="Assets\Resources\Credits.txt" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/LanaEduardaSchimitez/Documents/Puzzles/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
